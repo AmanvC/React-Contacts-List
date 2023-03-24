@@ -1,3 +1,9 @@
+# Readme
+
+## Description
+
+This is a React application witch fetches contacts data from an API and displays contacts on screen. It is fully responsive and multiple functionalities can be performed like - adding a contact, deleting a contact, updating a contact.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

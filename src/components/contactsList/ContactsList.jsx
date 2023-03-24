@@ -40,18 +40,21 @@ const ContactsList = () => {
   const updateDetails = async (updatedData) => {
     setLoading(true);
     const res = await axios.put("https://jsonplaceholder.typicode.com/users/1");
+    console.log(res);
     setLoading(false);
     const newArray = data.map((item) => {
       if (item.id === updatedData.id) {
-        return {
+        console.log("INSIDE");
+        const t = {
           id: updatedData.id,
-          name: res?.data?.name,
-          email: res?.data?.email,
-          phone: res?.data?.phone,
+          ...updatedData,
         };
+        console.log("TTTTTTT", t);
+        return t;
       }
       return item;
     });
+    console.log("NEWARRAY", newArray);
     setData(newArray);
     addToast("Contact updated successfully!", {
       appearance: "success",
@@ -103,6 +106,8 @@ const ContactsList = () => {
       autoDismiss: true,
     });
   };
+
+  console.log(data);
 
   return (
     <div className="contacts-list">
